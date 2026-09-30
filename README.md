@@ -71,4 +71,4 @@ O resumo do projeto está no arquivo `Projeto_Painel_Producao_1_pagina.pdf`.
 ## Autora
 
 **Gabriela Lima**
-[LinkedIn](https://www.linkedin.com/in/gabriela-lima-2571513b8/)[Projeto_Painel_Producao.pdf](https://github.com/user-attachments/files/32833867/Projeto_Painel_Producao.pdf)
+[LinkedIn](www.linkedin.com/in/gabriela-lima-dados)[Projeto_Painel_Producao.pdf](https://github.com/user-attachments/files/32833867/Projeto_Painel_Producao.pdf)
