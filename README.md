@@ -12,33 +12,40 @@ O painel atende a gestores, ao PCP (Planejamento e Controle da Produção), à M
 ## O que o painel mostra
 
 ### Página Gestor
-Visão geral da produção: aderência ao plano, OEE (eficiência global), produtividade, peças rejeitadas, comparativo entre 2025 e 2026 e Pareto das paradas não planejadas.
+Visão geral da produção: aderência ao plano, OEE (eficiência global), produtividade e percentual de refugo. Mostra a evolução mensal do OEE, o comparativo com o ano anterior e as quantidades planejadas e realizadas por mês e por linha.
 
-![Página Gestor](https://i.ibb.co/KzLVQXv3/Captura-de-tela-2026-09-29-181544.png)
-
-### Dica de ferramenta
-Ao passar o mouse sobre o gráfico de OEE, aparece o comparativo semanal (semana atual contra a semana anterior).
-
-![Dica de ferramenta: comparativo semanal](https://i.ibb.co/mFRds4wc/Captura-de-tela-2026-09-29-181554.png)
+![Página Gestor](docs/screenshots/01-gestor.png)
 
 ### Página PCP e Manutenção
-Mostra onde e quando ocorrem as perdas: aderência por linha e semana, planejado e realizado por linha, paradas por área responsável, por dia da semana e turno, e por linha.
+Mostra a aderência ao plano por linha e semana, as paradas não planejadas por área responsável e por linha, o Pareto dos motivos e a distribuição das paradas por dia da semana e turno. Os filtros permitem explorar setor, turno, período e motivo.
 
-![Página PCP e Manutenção](https://i.ibb.co/k2tC1ww8/Captura-de-tela-2026-09-29-181602.png)
+![Página PCP e Manutenção](docs/screenshots/02-pcp-manutencao.png)
 
-### Página Conclusão
-Reúne os achados, as causas prováveis, as recomendações e as limitações do estudo.
+### Página PIN-02
+Detalha a linha PIN-02, relacionando aderência ao plano, performance e disponibilidade ao longo das semanas. Também mostra as horas de parada não planejadas por motivo.
 
-![Página Conclusão](https://i.ibb.co/whBvhfWY/Captura-de-tela-2026-09-29-181613.png)
+![Página PIN-02](docs/screenshots/03-pin-02.png)
+
+### Página QCO — Qualidade e Cobertura Operacional
+Aprofunda dois pontos de atenção: falta de operador às sextas-feiras à tarde e percentual de refugo por produto na linha MON-01.
+
+![Página QCO](docs/screenshots/04-qco.png)
+
+### Dicas de ferramenta
+O painel inclui um comparativo semanal e uma dica com as quantidades aprovadas e rejeitadas por produto. Essas páginas de apoio aparecem ao passar o mouse sobre os visuais associados.
 
 ## Principais achados
 
-1. **Linha PIN-02, agosto de 2026:** a aderência ao plano foi de 84%, 69%, 62% e 73% nas semanas de 03 a 24/08 e voltou a cerca de 100% em setembro. As quebras de equipamento somaram 56,5 horas nessas quatro semanas, contra 212,5 horas nas outras 100 semanas.
-2. **Linha MON-01:** o produto C tem 8,2% de peças rejeitadas, contra 2,5% nos demais produtos da linha.
-3. **Sextas-feiras à tarde:** a falta de operador é de 0,47 hora por turno e por linha, contra 0,07 a 0,09 hora nos demais dias e turnos.
-4. **Manutenção:** responde por cerca de 54% das horas paradas não planejadas.
+1. **Linha PIN-02, agosto de 2026:** a disponibilidade e a aderência ao plano caíram até a semana de 17/08, com recuperação nas semanas de 24 e 31/08. As quebras de equipamento somaram cerca de 59 horas no recorte exibido. A performance ficou relativamente estável.
+2. **Linha MON-01, de 01/01 a 25/09/2026:** o produto C apresentou 7,77% de refugo e concentrou 1.920 das 2.722 peças rejeitadas da linha (70,5%).
+3. **Sextas-feiras à tarde, de 01/01 a 25/09/2026:** a falta de operador somou 125 horas, aproximadamente 38,5% das horas desse motivo no período.
+4. **Manutenção, de 01/01 a 25/09/2026:** responde por cerca de 54% das horas paradas não planejadas.
+
+As páginas PIN-02 e QCO apresentam hipóteses de investigação, ações sugeridas e formas de acompanhamento.
 
 ## Indicadores
+
+Valores calculados sobre toda a base (30/09/2024 a 25/09/2026). Os prints mostram recortes de 2026, portanto os números exibidos podem diferir.
 
 | Indicador | Valor | Como é calculado |
 |---|---|---|
@@ -54,12 +61,17 @@ Reúne os achados, as causas prováveis, as recomendações e as limitações do
 - Tabelas: Produção (7.968 registros), Paradas (24.478 registros), Calendário, Linha, Turno e Motivo.
 - Conferência dos dados: as horas programadas menos as horas produzidas são iguais à soma das horas paradas (diferença zero).
 - Ferramentas: Power BI (Power Query, modelagem de dados, medidas em DAX e visualização) e Excel.
-- Os arquivos da base estão na pasta `dados`.
+- Os seis arquivos Excel da base estão na raiz deste repositório.
 
 ## Como abrir o painel
 
-Baixe o arquivo `.pbix` e abra no Power BI Desktop, que é gratuito.
-O resumo do projeto está no arquivo `Projeto_Painel_Producao_1_pagina.pdf`.
+1. Baixe o repositório em **Code → Download ZIP** e extraia os arquivos.
+2. Abra [dash_producao_v3.pbix](dash_producao_v3.pbix) no Power BI Desktop.
+3. Para atualizar os dados, ajuste os caminhos das fontes no Power Query para a pasta em que você salvou os arquivos Excel.
+
+O arquivo PBIX contém os dados importados. As planilhas permitem consultar a base e atualizar o modelo.
+
+O [resumo em PDF](Projeto_Painel_Producao.pdf) foi mantido como material complementar da versão anterior; os prints e as descrições acima correspondem à versão atual.
 
 ## Limitações
 
@@ -71,4 +83,4 @@ O resumo do projeto está no arquivo `Projeto_Painel_Producao_1_pagina.pdf`.
 ## Autora
 
 **Gabriela Lima**
-[LinkedIn](www.linkedin.com/in/gabriela-lima-dados)[Projeto_Painel_Producao.pdf](https://github.com/user-attachments/files/32833867/Projeto_Painel_Producao.pdf)
+[LinkedIn](https://www.linkedin.com/in/gabriela-lima-dados/)
